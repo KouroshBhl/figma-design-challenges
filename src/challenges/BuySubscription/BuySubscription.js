@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from './Header';
 import Plans from './Plans';
+import { Inspired } from '../../components/Inspired';
+import { device } from './asset/data';
 
 const BuySubscription = () => {
   return (
@@ -13,28 +15,48 @@ const BuySubscription = () => {
           See all subscriptions
         </a>
       </div>
+      <Inspired
+        name='uidesigndaily'
+        url='https://uidesigndaily.com/posts/figma-buy-subscription-section-pricing-card-day-1574'
+      />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f1f1f6;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media ${device.mobileL} {
+    padding-bottom: 3rem;
+  }
 
   .container {
     display: flex;
     flex-direction: column;
     gap: 5.6rem;
     max-width: 130rem;
-    max-height: 80.4rem;
     margin: 0 auto;
     background-color: #f4f5fa;
     box-shadow: 0px 47px 57px -26px rgba(83, 83, 145, 0.14);
     border-radius: 2.3rem;
-    padding: 12rem 14.6rem;
+    padding: 5rem 13.6rem;
+    justify-content: center;
+    align-items: center;
+
+    @media ${device.laptop} {
+      width: 100%;
+      padding: 5rem 4rem;
+    }
+
+    @media ${device.mobileL} {
+      width: 100%;
+      padding: 3rem 3rem 3rem 4rem;
+    }
   }
   .all-subs {
     background-color: #171435;

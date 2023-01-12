@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { device } from './asset/data.js';
 
 const Card = ({ logo, title, subTitle, price, color }) => {
-  console.log(color);
   return (
     <Cont>
       <Before style={{ backgroundColor: color }}></Before>
@@ -18,7 +18,6 @@ const Card = ({ logo, title, subTitle, price, color }) => {
           <h4 className='price-plan'>
             <span className='price'>{price},-</span>/month
           </h4>
-
           <button className='card-btn'>Add subscription</button>
         </Container>
       </Wrapper>
@@ -28,6 +27,11 @@ const Card = ({ logo, title, subTitle, price, color }) => {
 
 const Cont = styled.div`
   position: relative;
+  width: 33.33%;
+
+  @media ${device.mobileL} {
+    width: 100%;
+  }
 `;
 
 const Before = styled.div`
@@ -39,11 +43,15 @@ const Before = styled.div`
   left: -8%;
   top: -8%;
   border-radius: 1.4rem;
+
+  @media ${device.mobileL} {
+    left: -4%;
+  }
 `;
 
 const Wrapper = styled.div`
   background-color: #ffffff;
-  width: 28.5rem;
+  width: 100%;
   height: 32.6rem;
   border-radius: 1.4rem;
   position: relative;
@@ -57,11 +65,25 @@ const Container = styled.div`
   display: flex;
   gap: 1.6rem;
   flex-direction: column;
+  @media ${device.mobileL} {
+    text-align: center;
+  }
+
+  @media ${device.laptop} {
+    font-size: 1.6rem;
+  }
+
+  @media ${device.tablet} {
+    padding: 2.8rem;
+  }
 
   .card-title {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 0.4rem;
+    @media ${device.tablet} {
+      font-size: 1.7rem;
+    }
   }
 
   .card-subtitle {
@@ -76,6 +98,9 @@ const Container = styled.div`
   .price {
     font-size: 2.4rem;
     font-weight: 700;
+    @media ${device.tablet} {
+      font-size: 2rem;
+    }
   }
 
   .card-btn {
@@ -90,6 +115,15 @@ const Container = styled.div`
     font-weight: 500;
     color: #171435;
     font-family: inherit;
+
+    @media ${device.tablet} {
+      padding: 0.8rem 1rem;
+      font-size: 1.4rem;
+    }
+    @media ${device.mobileL} {
+      width: 80%;
+      margin: auto;
+    }
   }
 `;
 
