@@ -9,18 +9,37 @@ import { ImInstagram } from 'react-icons/im';
 const Navbar = () => {
   return (
     <Wrapper>
-      <UpNavbar>
-        <ContactInfo>
-          <div className='flex-center'>
-            <MdEmail className='contact-icons' />
-            <a href='mailto:kourosh9bhl@gmail.com'>kourosh9bhl@gmail.com</a>
+      <NavbarLinks>
+        <HeaderLinks>
+          <h2>LOGO</h2>
+          <div>
+            <ul className='lists'>
+              <li>
+                <NavLink to='/'>Home</NavLink>
+              </li>
+              <li>
+                <NavLink to='/'>Components</NavLink>
+              </li>
+              <li>
+                <NavLink to='/'>Hero sections</NavLink>
+              </li>
+              <li>
+                <NavLink to='/'>About me</NavLink>
+              </li>
+            </ul>
           </div>
-          <div className='flex-center'>
-            <BsTelephonePlusFill className='contact-icons' />
-            <a href='tel:+989356664280'>(+98) 9356664280</a>
-          </div>
-        </ContactInfo>
+        </HeaderLinks>
         <Socials>
+          <ContactInfo>
+            <div className='flex-center'>
+              <MdEmail className='contact-icons' />
+              <a href='mailto:kourosh9bhl@gmail.com'>kourosh9bhl@gmail.com</a>
+            </div>
+            <div className='flex-center'>
+              <BsTelephonePlusFill className='contact-icons' />
+              <a href='tel:+989356664280'>(+98) 9356664280</a>
+            </div>
+          </ContactInfo>
           <div>
             <a href='https://www.linkedin.com/in/kourosh-baharloo/'>
               <ImLinkedin className='social-icons' />
@@ -32,15 +51,7 @@ const Navbar = () => {
             </a>
           </div>
         </Socials>
-      </UpNavbar>
-
-      <DownNavbar>
-        <ul>
-          <li>
-            <NavLink to='/home'>Home</NavLink>
-          </li>
-        </ul>
-      </DownNavbar>
+      </NavbarLinks>
     </Wrapper>
   );
 };
@@ -51,7 +62,19 @@ const Wrapper = styled.nav`
   font-family: 'Inter', sans-serif;
 `;
 
-const UpNavbar = styled.div`
+const HeaderLinks = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+
+  .lists {
+    display: flex;
+    gap: 4rem;
+  }
+`;
+
+const NavbarLinks = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -62,15 +85,11 @@ const UpNavbar = styled.div`
   box-shadow: inset 0px -1px 0px #000000;
 `;
 
-const DownNavbar = styled.div`
-  width: 100%;
-  padding: 2.5rem 8rem;
-`;
-
 const ContactInfo = styled.div`
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
+  margin-right: 2rem;
 
   .flex-center {
     display: flex;
