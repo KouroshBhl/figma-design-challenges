@@ -1,38 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
-import Img1 from './asset/ice.png';
 
-const Card = () => {
+const Card = ({ logo, title, subTitle, price, color }) => {
+  console.log(color);
   return (
-    <Wrapper>
-      <Container>
-        <figure>
-          <img src={Img1} alt='' />
-        </figure>
-        <div>
-          <h3 className='card-title'>Ice Mobile 10GB</h3>
-          <span className='card-subtitle'>Up to 100Mbit/s</span>
-        </div>
-        <h4 className='price-plan'>
-          <span className='price'>299,-</span>/month
-        </h4>
+    <Cont>
+      <Before style={{ backgroundColor: color }}></Before>
+      <Wrapper>
+        <Container>
+          <figure>
+            <img src={logo} alt={title} />
+          </figure>
+          <div>
+            <h3 className='card-title'>{title}</h3>
+            <span className='card-subtitle'>{subTitle}</span>
+          </div>
+          <h4 className='price-plan'>
+            <span className='price'>{price},-</span>/month
+          </h4>
 
-        <button className='card-btn'>Add subscription</button>
-      </Container>
-    </Wrapper>
+          <button className='card-btn'>Add subscription</button>
+        </Container>
+      </Wrapper>
+    </Cont>
   );
 };
 
+const Cont = styled.div`
+  position: relative;
+`;
+
+const Before = styled.div`
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  /* background-color: #fffbec; */
+  left: -8%;
+  top: -8%;
+  border-radius: 1.4rem;
+`;
+
 const Wrapper = styled.div`
   background-color: #ffffff;
-  display: flex;
   width: 28.5rem;
   height: 32.6rem;
   border-radius: 1.4rem;
+  position: relative;
 `;
 
 const Container = styled.div`
   width: 100%;
+  height: 100%;
   padding: 4rem;
   font-family: 'Poppins', sans-serif;
   display: flex;
@@ -67,6 +86,10 @@ const Container = styled.div`
     border-radius: 41px;
     cursor: pointer;
     width: 100%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #171435;
+    font-family: inherit;
   }
 `;
 
