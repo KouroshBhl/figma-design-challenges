@@ -43,6 +43,7 @@ const Card = styled.div`
   position: relative;
   padding: 6.4rem;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 5.4rem;
   z-index: 10;

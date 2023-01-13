@@ -1,31 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
+import { data } from './data';
 
-const People = ({ name, job, img }) => {
+const People = ({ name, job, img, id, index }) => {
   return (
-    <Wrapper>
-      <img src={img} alt={name} />
-      <div>
-        <h3>{name}</h3>
-        <h4>{job}</h4>
-      </div>
+    <div
+      className='cards'
+      style={{ transform: `translateX( ${(id - index) * 100}%)` }}
+    >
+      <Container>
+        <img src={img} alt={name} />
+        <div>
+          <h3>{name}</h3>
+          <h4>{job}</h4>
+        </div>
 
-      <button>View content</button>
-    </Wrapper>
+        <button>View content</button>
+      </Container>
+    </div>
   );
 };
 
-const Wrapper = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 23.5rem;
-  height: 20.6rem;
+  min-width: 23.5rem;
+  min-height: 20.6rem;
   padding: 2.4rem;
   gap: 1.6rem;
   color: #1e1d4e;
   text-align: center;
+  position: relative;
+  z-index: -10;
 
   img {
     width: 9rem;

@@ -19,3 +19,9 @@ a {
   text-decoration: none;
   color: #000;
 }
+
+.cards {
+  width: 27.8rem;
+  height: 100%;
+  position: absolute;
+}
