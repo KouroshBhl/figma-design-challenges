@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import BackgroundCard from './BackgroundCard';
 import Header from './Header';
+import PeopleContainer from './PeopleContainer';
 
 const SubscriptionSection = () => {
   return (
@@ -9,6 +10,7 @@ const SubscriptionSection = () => {
       <div className='card-container'>
         <Card>
           <Header />
+          <PeopleContainer />
         </Card>
         <BackgroundCard />
       </div>
@@ -40,6 +42,9 @@ const Card = styled.div`
   box-shadow: 30px 4px 84px rgba(22, 20, 96, 0.16);
   position: relative;
   padding: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.4rem;
   z-index: 10;
 `;
 

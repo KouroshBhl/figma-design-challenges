@@ -10,7 +10,6 @@ const Header = () => {
         Support these creators by purchasing their monthly subscriptions, and
         get access to premium content:
       </h2>
-
       <HeaderIcons />
     </CardHeader>
   );
