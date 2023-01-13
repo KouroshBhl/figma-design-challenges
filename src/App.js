@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home, Contact, About, NoMath } from './pages';
-import { BuySubscription } from './challenges';
+import { BuySubscription, SubscriptionSection } from './challenges';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/about' element={<About />} />
         <Route path='/buy-subscription' element={<BuySubscription />} />
+        <Route path='/subscription-section' element={<SubscriptionSection />} />
         <Route path='*' element={<NoMath />} />
       </Routes>
     </BrowserRouter>
