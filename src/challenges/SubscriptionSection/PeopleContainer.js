@@ -48,7 +48,6 @@ const Wrapper = styled.footer`
     gap: 2.4rem;
     justify-content: space-between;
     align-items: center;
-    /* overflow: hidden; */
   }
 
   .arrow-container {

@@ -4,7 +4,7 @@ import { data } from './data';
 
 const People = ({ name, job, img, id, index }) => {
   return (
-    <div
+    <Cards
       className='cards'
       style={{ transform: `translateX( ${(id - index) * 100}%)` }}
     >
@@ -17,9 +17,15 @@ const People = ({ name, job, img, id, index }) => {
 
         <button>View content</button>
       </Container>
-    </div>
+    </Cards>
   );
 };
+
+const Cards = styled.div`
+  width: 27.8rem;
+  height: 100%;
+  position: absolute;
+`;
 
 const Container = styled.div`
   display: flex;
